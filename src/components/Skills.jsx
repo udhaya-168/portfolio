@@ -39,20 +39,11 @@ const Skills = () => {
         {skills.map((skill, index) => (
           <ScrollAnimation key={index} animationDelay={(index % 6) * 0.1}>
             <div className="rounded-xl p-5 sm:p-6 transition-all hover:-translate-y-1.5" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-              <div className="flex items-center mb-3">
+              <div className="flex items-center">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{skill.icon}</span>
                   <span className="font-semibold text-sm sm:text-base">{skill.name}</span>
                 </div>
-              </div>
-              <div className="w-full h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255, 255, 255, 0.1)' }}>
-                <div
-                  className="h-full rounded-full transition-all duration-1000 ease-out"
-                  style={{
-                    width: animated ? `${skill.level}%` : '0%',
-                    background: 'var(--accent-grad)'
-                  }}
-                />
               </div>
             </div>
           </ScrollAnimation>

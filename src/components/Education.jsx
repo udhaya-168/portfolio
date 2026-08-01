@@ -8,19 +8,22 @@ const Education = () => {
       degree: 'BCA',
       institution: 'SRM Institute of Science and Technology, Kattankulathur',
       year: '2022 – 2025',
-      score: 'CGPA: 8.44'
+      score: 'CGPA: 8.44',
+      image: '/portfolio/srm_college.jpg'
     },
     {
       degree: 'HSC',
       institution: 'CMS Govt. Higher Secondary School, Kanchipuram',
       year: '2021 – 2022',
-      score: 'Percentage: 74%'
+      score: 'Percentage: 74%',
+      image: '/portfolio/cms_school.jpg'
     },
     {
       degree: 'SSLC',
       institution: 'Meenakshi Ammal Matric Hr. Sec. School, Uthiramerur',
       year: '2019 – 2020',
-      score: 'Percentage: 75%'
+      score: 'Percentage: 75%',
+      image: '/portfolio/meenakshi_school.jpg'
     }
   ]
 
@@ -45,8 +48,18 @@ const Education = () => {
                 🎓
               </div>
               <div className="flex-1 p-4 sm:p-5 rounded-xl text-center sm:text-left" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-                <h4 className="text-sm sm:text-base font-bold mb-2">{edu.degree}</h4>
-                <p className="text-xs sm:text-sm mb-2" style={{ color: 'var(--text-dim)' }}>{edu.institution}</p>
+                <div className="flex flex-col sm:flex-row gap-4 mb-3">
+                  <img 
+                    src={edu.image} 
+                    alt={edu.institution} 
+                    className="w-full sm:w-32 h-20 sm:h-24 object-cover rounded-lg mx-auto sm:mx-0"
+                    style={{ borderRadius: '8px' }}
+                  />
+                  <div className="flex-1">
+                    <h4 className="text-sm sm:text-base font-bold mb-2">{edu.degree}</h4>
+                    <p className="text-xs sm:text-sm mb-2" style={{ color: 'var(--text-dim)' }}>{edu.institution}</p>
+                  </div>
+                </div>
                 <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 text-xs" style={{ color: 'var(--text-faint)' }}>
                   <div className="flex items-center gap-2">
                     <Calendar size={12} />

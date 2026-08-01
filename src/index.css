@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent1: #7c5cff;
+  --accent2: #3b82f6;
+  --accent-grad: linear-gradient(135deg, #8a5cff 0%, #4f6bff 100%);
+}
+
+:root {
+  --bg: #060815;
+  --bg-panel: #0b0e1f;
+  --bg-panel-2: #10142a;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8eaf6;
+  --text-dim: #9aa0c0;
+  --text-faint: #6b7196;
+  --card: rgba(255, 255, 255, 0.03);
+}
+
+:root:not(.dark) {
+  --bg: #f8f9fc;
+  --bg-panel: #ffffff;
+  --bg-panel-2: #f1f3f8;
+  --border: rgba(0, 0, 0, 0.1);
+  --text: #1a1a2e;
+  --text-dim: #4a4a6a;
+  --text-faint: #6b6b8a;
+  --card: rgba(255, 255, 255, 0.8);
+}
+
+html {
+  font-size: clamp(16px, 1vw, 22px);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, .logo, .brand {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* Ambient glow background */
+.glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(37.5vw circle at 15% 10%, rgba(124, 92, 255, 0.14), transparent 60%),
+    radial-gradient(31.25vw circle at 85% 30%, rgba(59, 130, 246, 0.10), transparent 60%);
+}
+
+:root:not(.dark) .glow {
+  background:
+    radial-gradient(37.5vw circle at 15% 10%, rgba(124, 92, 255, 0.08), transparent 60%),
+    radial-gradient(31.25vw circle at 85% 30%, rgba(59, 130, 246, 0.06), transparent 60%);
+}
+
+/* Print-friendly styles */
+@media print {
+  .glow,
+  #ScrollToTop,
+  #ReadingProgress {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    padding: 20px 0 !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  a[href^="#"]::after {
+    content: "";
+  }
+}
+
+/* Enhanced hover effects */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(124, 92, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.hover-shine:hover::before {
+  left: 100%;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.75rem);
+  }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.delay-100 {
+  transition-delay: 100ms;
+}
+
+.delay-200 {
+  transition-delay: 200ms;
+}
+
+.delay-300 {
+  transition-delay: 300ms;
+}
+
+.delay-400 {
+  transition-delay: 400ms;
+}
+
+.delay-500 {
+  transition-delay: 500ms;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .glow {
+    background:
+      radial-gradient(25vw circle at 15% 10%, rgba(124, 92, 255, 0.14), transparent 60%),
+      radial-gradient(18.75vw circle at 85% 30%, rgba(59, 130, 246, 0.10), transparent 60%);
+  }
+}
+
+@media (max-width: 768px) {
+  .glow {
+    background:
+      radial-gradient(18.75vw circle at 15% 10%, rgba(124, 92, 255, 0.14), transparent 60%),
+      radial-gradient(12.5vw circle at 85% 30%, rgba(59, 130, 246, 0.10), transparent 60%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float {
+    animation: none;
+  }
+}

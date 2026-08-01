@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Udhayakumar;A;;;
+FN:Udhayakumar A
+ORG:Data Patterns (India) Ltd
+TITLE:IT Support Engineer
+TEL;TYPE=WORK,VOICE:+91 9345132721
+EMAIL:udhayakumara737@gmail.com
+URL:https://github.com/udhaya-168
+URL:https://www.linkedin.com/in/udhayakumar25/
+ADR;TYPE=WORK:;;26D/187A, CSM Thoppu Street, Pillayarpalayam;Kanchipuram;Kanchipuram;631501;India
+NOTE:IT Support Engineer & Aspiring Web Developer with expertise in Python, JavaScript, AWS, Azure, Docker, and Linux.
+END:VCARD

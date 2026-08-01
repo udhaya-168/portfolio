@@ -8,8 +8,8 @@ const Hero = () => {
       <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-16 items-center">
         <div className="text-center lg:text-left">
           <ScrollAnimation>
-            <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-6 lg:mb-7 mx-auto lg:mx-0 shadow-2xl" style={{ boxShadow: '0 0 40px rgba(124, 92, 255, 0.5)' }}>
-              <img src="/portfolio/profile.jpg" alt="Udhayakumar A" className="w-full h-full object-cover" />
+            <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-6 lg:mb-7 mx-auto lg:mx-0 shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer" style={{ boxShadow: '0 0 40px rgba(124, 92, 255, 0.5)' }}>
+              <img src="/portfolio/profile.jpg" alt="Udhayakumar A" className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
             </div>
           </ScrollAnimation>
           

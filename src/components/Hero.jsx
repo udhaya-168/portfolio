@@ -40,14 +40,6 @@ const Hero = () => {
           <ScrollAnimation animationDelay={0.4}>
             <div className="flex flex-wrap gap-3 mb-8 lg:mb-10 justify-center lg:justify-start">
               <a
-                href="#contact"
-                className="font-semibold text-sm transition-transform hover:-translate-y-0.5"
-                style={{ padding: '13px 20px', borderRadius: '11px', background: 'var(--accent-grad)', color: '#fff', boxShadow: '0 10px 30px -10px rgba(124, 92, 255, 0.7)', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-              >
-                <ExternalLink size={18} />
-                Get In Touch
-              </a>
-              <a
                 href="#projects"
                 className="font-semibold text-sm transition-transform hover:-translate-y-0.5"
                 style={{ padding: '13px 20px', borderRadius: '11px', border: '1px solid var(--border)', color: 'var(--text)', background: 'transparent', display: 'inline-flex', alignItems: 'center', gap: '8px' }}

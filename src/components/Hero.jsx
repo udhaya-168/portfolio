@@ -1,14 +1,20 @@
-import React from 'react'
-import { Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, User } from 'lucide-react'
+import React, { useState } from 'react'
+import { Mail, Phone, MapPin, Download, ExternalLink, Github, Linkedin, User, X } from 'lucide-react'
 import ScrollAnimation from './ScrollAnimation'
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <section id="home" className="relative z-10" style={{ padding: 'clamp(60px, 8vw, 100px) clamp(20px, 4vw, 48px)', maxWidth: '1400px', margin: '0 auto', minHeight: '92vh', paddingTop: '70px' }}>
       <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-16 items-center">
         <div className="text-center lg:text-left">
           <ScrollAnimation>
-            <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-6 lg:mb-7 mx-auto lg:mx-0 shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer" style={{ boxShadow: '0 0 40px rgba(124, 92, 255, 0.5)' }}>
+            <div 
+              className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-6 lg:mb-7 mx-auto lg:mx-0 shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer" 
+              style={{ boxShadow: '0 0 40px rgba(124, 92, 255, 0.5)' }}
+              onClick={() => setIsModalOpen(true)}
+            >
               <img src="/portfolio/profile.jpg" alt="Udhayakumar A" className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
             </div>
           </ScrollAnimation>
@@ -121,6 +127,31 @@ const Hero = () => {
           </ScrollAnimation>
         </div>
       </div>
+
+      {/* Profile Image Modal */}
+      {isModalOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <X size={32} />
+            </button>
+            <img 
+              src="/portfolio/profile.jpg" 
+              alt="Udhayakumar A" 
+              className="w-full h-full object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

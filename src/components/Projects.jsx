@@ -12,7 +12,8 @@ const Projects = () => {
       url: 'https://dinewith.netlify.app/',
       description: 'Full-stack restaurant table booking application with user authentication, real-time table management, and admin approval workflow.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-      category: 'fullstack'
+      category: 'fullstack',
+      image: '/portfolio/Dine_with_us.jpg'
     },
     {
       title: 'Portfolio Website',
@@ -20,7 +21,8 @@ const Projects = () => {
       url: '#',
       description: 'Modern responsive portfolio website with dark/light theme, smooth animations, and interactive components.',
       technologies: ['React', 'Vite', 'TailwindCSS'],
-      category: 'frontend'
+      category: 'frontend',
+      image: '/portfolio/portfolio.jpg'
     }
   ]
 
@@ -65,22 +67,12 @@ const Projects = () => {
         {filteredProjects.map((project, index) => (
           <ScrollAnimation key={index} animationDelay={index * 0.1}>
             <div className="rounded-xl overflow-hidden transition-transform hover:scale-105" style={{ background: 'var(--card)', border: '1px solid var(--border)' }}>
-              <div className="h-40 sm:h-50 w-full flex items-center justify-center" style={{ height: 'clamp(160px, 20vw, 200px)', background: 'linear-gradient(135deg, #2a1a3d, #160c22)' }}>
-                <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <defs>
-                    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#2a1a3d"/>
-                      <stop offset="100%" stopColor="#160c22"/>
-                    </linearGradient>
-                  </defs>
-                  <rect width="500" height="220" fill="url(#pg)"/>
-                  <circle cx="90" cy="120" r="3" fill="#ffd88a"/>
-                  <circle cx="410" cy="110" r="3" fill="#ffd88a"/>
-                  <rect x="60" y="150" width="380" height="8" rx="4" fill="#3a2a1a"/>
-                  <text x="250" y="100" fill="#e8eaf6" fontSize="20" fontFamily="Space Grotesk, sans-serif" textAnchor="middle" fontWeight="700">{project.title.substring(0, 20)}</text>
-                  <rect x="200" y="130" width="100" height="30" rx="8" fill="#7c5cff"/>
-                  <text x="250" y="150" fill="#fff" fontSize="13" textAnchor="middle" fontFamily="Inter">View</text>
-                </svg>
+              <div className="h-40 sm:h-50 w-full overflow-hidden" style={{ height: 'clamp(160px, 20vw, 200px)' }}>
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
               </div>
               <div className="p-5 sm:p-7">
                 <h3 className="text-lg sm:text-xl font-bold mb-2 text-center sm:text-left">{project.title}</h3>

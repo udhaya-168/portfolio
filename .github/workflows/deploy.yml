@@ -30,11 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Make vite executable
-        run: chmod +x node_modules/.bin/vite
-
       - name: Build
-        run: npm run build
+        run: npx vite@latest build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

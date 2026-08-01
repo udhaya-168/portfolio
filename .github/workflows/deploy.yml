@@ -28,14 +28,17 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Fix npm bin permissions
-        run: chmod +x node_modules/.bin/* || true
+      - name: Fix node_modules executables
+        run: |
+          # Ensure binaries in .bin are executable (works around permission issues from cache/extraction)
+          if [ -d ./node_modules/.bin ]; then
+            chmod -R a+rx ./node_modules/.bin || true
+          fi
 
       - name: Build
-        run: npx vite@latest build
-
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

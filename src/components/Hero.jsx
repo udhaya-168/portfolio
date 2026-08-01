@@ -127,7 +127,7 @@ const Hero = () => {
           onClick={() => setIsModalOpen(false)}
         >
           <div 
-            className="relative max-w-4xl max-h-[90vh] w-full"
+            className="relative max-w-4xl max-h-[90vh] w-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -139,7 +139,7 @@ const Hero = () => {
             <img 
               src="/portfolio/profile.jpg" 
               alt="Udhayakumar A" 
-              className="w-full h-full object-contain rounded-lg"
+              className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full"
             />
           </div>
         </div>

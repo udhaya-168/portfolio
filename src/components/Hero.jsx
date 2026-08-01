@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="text-center lg:text-left">
           <ScrollAnimation>
             <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-6 lg:mb-7 mx-auto lg:mx-0 shadow-2xl" style={{ boxShadow: '0 0 40px rgba(124, 92, 255, 0.5)' }}>
-              <img src="/profile.jpg" alt="Udhayakumar A" className="w-full h-full object-cover" />
+              <img src="/portfolio/profile.jpg" alt="Udhayakumar A" className="w-full h-full object-cover" />
             </div>
           </ScrollAnimation>
           
@@ -50,7 +50,7 @@ const Hero = () => {
                 View Projects
               </a>
               <a
-                href="/Udhayakumar_Resume.pdf"
+                href="/portfolio/Udhayakumar_Resume.pdf"
                 download
                 className="font-semibold text-sm transition-transform hover:-translate-y-0.5"
                 style={{ padding: '13px 20px', borderRadius: '11px', background: '#fff', color: '#0b0e1f', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
